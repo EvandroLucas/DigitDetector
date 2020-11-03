@@ -47,24 +47,20 @@ X = train_data.drop("label",1).iloc[0:num_lines,0:].to_numpy()
 y = train_data["label"].iloc[0:num_lines].to_numpy()
 
 
-# clfs = {
-#     "GaussianNB" : GaussianNB(),
-#     "LinearSVM" : SVC(kernel="linear", C=0.025),
-#     "RBF_SVM" :  SVC(gamma=2, C=1),
-#     "MLPClassifier" : MLPClassifier(),
-#     "DecisionTreeClassifier" : DecisionTreeClassifier(),
-#     "GradientBoostingClassifier" : GradientBoostingClassifier(),
-#     "AdaBoostClassifier" : AdaBoostClassifier(),
-#     "Perceptron" : Perceptron(),
-#     "PassiveAggressiveClassifier" : PassiveAggressiveClassifier(),
-#     "NearestCentroid" : NearestCentroid(),
-#     "RandomForestClassifier" : RandomForestClassifier()
-# }
-
 clfs = {
+    "GaussianNB" : GaussianNB(),
     "LinearSVM" : SVC(kernel="linear", C=0.025),
-    "RBF_SVM" :  SVC(gamma=2, C=1)
+    "RBF_SVM" :  SVC(gamma=2, C=1),
+    "MLPClassifier" : MLPClassifier(),
+    "DecisionTreeClassifier" : DecisionTreeClassifier(),
+    "GradientBoostingClassifier" : GradientBoostingClassifier(),
+    "AdaBoostClassifier" : AdaBoostClassifier(),
+    "Perceptron" : Perceptron(),
+    "PassiveAggressiveClassifier" : PassiveAggressiveClassifier(),
+    "NearestCentroid" : NearestCentroid(),
+    "RandomForestClassifier" : RandomForestClassifier()
 }
+
 
 for key, clf in clfs.items():
     print("Training : " + str(key))
